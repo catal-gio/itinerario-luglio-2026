@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Itinerario Camper — Luglio 2026</title>
+<style>
+  :root{
+    --cream:#f6f1e7;
+    --paper:#fffdf8;
+    --ink:#2e2a22;
+    --green:#3f5d3a;
+    --green-dark:#2b4127;
+    --clay:#b5551f;
+    --line:#e2d9c4;
+    --muted:#79705c;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:"Georgia","Iowan Old Style",serif;
+    line-height:1.5;
+  }
+  header{
+    text-align:center;
+    padding:2.5rem 1.2rem 2rem;
+    border-bottom:3px double var(--green);
+    background:var(--paper);
+  }
+  header img{
+    width:100%;
+    max-width:520px;
+    border-radius:10px;
+    margin:1rem auto 0.5rem;
+    display:block;
+    box-shadow:0 6px 18px rgba(46,42,34,0.15);
+  }
+  h1{
+    font-size:2rem;
+    margin:0 0 0.3rem;
+    color:var(--green-dark);
+    letter-spacing:0.5px;
+  }
+  .subtitle{
+    font-family:"Trebuchet MS",sans-serif;
+    color:var(--muted);
+    font-size:0.95rem;
+    text-transform:uppercase;
+    letter-spacing:2px;
+  }
+  .partenza{
+    display:inline-block;
+    margin-top:0.9rem;
+    background:var(--green);
+    color:#fff;
+    font-family:"Trebuchet MS",sans-serif;
+    padding:0.4rem 1rem;
+    border-radius:999px;
+    font-size:0.9rem;
+  }
+  nav.toc{
+    max-width:760px;
+    margin:2rem auto 0;
+    padding:1.2rem 1.4rem;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:12px;
+  }
+  nav.toc h2{
+    font-family:"Trebuchet MS",sans-serif;
+    font-size:0.85rem;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:var(--muted);
+    margin:0 0 0.7rem;
+  }
+  nav.toc ol{
+    columns:2;
+    -webkit-columns:2;
+    margin:0;
+    padding-left:1.2rem;
+    font-size:0.95rem;
+  }
+  nav.toc li{margin-bottom:0.35rem;}
+  nav.toc a{color:var(--green-dark);text-decoration:none;}
+  nav.toc a:hover{text-decoration:underline;}
+
+  main{
+    max-width:760px;
+    margin:2rem auto 4rem;
+    padding:0 1.2rem;
+  }
+
+  .tappa{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:6px solid var(--green);
+    border-radius:10px;
+    padding:1.2rem 1.4rem;
+    margin-bottom:1.1rem;
+    scroll-margin-top:1rem;
+  }
+  .tappa.opzioni{border-left-color:var(--clay);}
+  .tappa .num{
+    font-family:"Trebuchet MS",sans-serif;
+    font-size:0.78rem;
+    color:var(--muted);
+    letter-spacing:1px;
+    text-transform:uppercase;
+  }
+  .tappa h3{
+    margin:0.15rem 0 0.5rem;
+    font-size:1.25rem;
+    color:var(--green-dark);
+  }
+  .badges{
+    margin:0.4rem 0 0.6rem;
+  }
+  .badge{
+    display:inline-block;
+    font-family:"Trebuchet MS",sans-serif;
+    font-size:0.78rem;
+    background:#eef2ea;
+    color:var(--green-dark);
+    border:1px solid #d3decb;
+    padding:0.15rem 0.55rem;
+    border-radius:999px;
+    margin:0 0.3rem 0.3rem 0;
+  }
+  .badge.no{
+    background:#f7ece6;
+    color:var(--clay);
+    border-color:#f0d9c9;
+  }
+  .tappa p{margin:0.35rem 0;}
+  .tappa .note{
+    font-size:0.9rem;
+    color:var(--muted);
+    font-style:italic;
+  }
+  .links{
+    margin-top:0.7rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem;
+  }
+  .links a{
+    font-family:"Trebuchet MS",sans-serif;
+    font-size:0.85rem;
+    color:#fff;
+    background:var(--green);
+    text-decoration:none;
+    padding:0.35rem 0.8rem;
+    border-radius:6px;
+  }
+  .links a:hover{background:var(--green-dark);}
+  .links a.secondary{
+    background:transparent;
+    color:var(--green-dark);
+    border:1px solid var(--green);
+  }
+  .links a.secondary:hover{background:#eef2ea;}
+
+  .opzioni-wrap{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0.8rem;
+  }
+  .opzione{
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:0.8rem 1rem;
+    background:#fffef9;
+  }
+  .opzione h4{margin:0 0 0.3rem;font-size:1rem;color:var(--clay);}
+
+  section.divider{
+    text-align:center;
+    margin:2.4rem 0 1.2rem;
+    font-family:"Trebuchet MS",sans-serif;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:0.8rem;
+    color:var(--muted);
+  }
+  section.divider::before,section.divider::after{
+    content:"";
+  }
+
+  .mare-list{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:1.2rem 1.4rem;
+  }
+  .mare-list ul{padding-left:1.2rem;margin:0.5rem 0 0;}
+  .mare-list li{margin-bottom:0.4rem;}
+  .mare-list a{color:var(--green-dark);}
+
+  .avvisi{
+    background:#fdf6ec;
+    border:1px solid #eddcb8;
+    border-radius:10px;
+    padding:1.1rem 1.4rem;
+    margin-top:1.5rem;
+  }
+  .avvisi h3{margin-top:0;color:var(--clay);font-size:1rem;}
+  .avvisi ul{margin:0.4rem 0 0;padding-left:1.2rem;}
+  .avvisi li{margin-bottom:0.3rem;}
+
+  footer{
+    text-align:center;
+    padding:1.5rem;
+    font-family:"Trebuchet MS",sans-serif;
+    font-size:0.85rem;
+    color:var(--muted);
+    border-top:1px solid var(--line);
+  }
+  footer a{color:var(--green-dark);}
+
+  a.backtotop{
+    position:fixed;
+    bottom:1.2rem;
+    right:1.2rem;
+    background:var(--green);
+    color:#fff;
+    width:2.6rem;
+    height:2.6rem;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:1.1rem;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  @media (max-width:600px){
+    nav.toc ol{columns:1;}
+    .opzioni-wrap{grid-template-columns:1fr;}
+    h1{font-size:1.6rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="subtitle">Soste Camper Italia di GP</p>
+  <h1>🚐 Itinerario Camper — Luglio 2026</h1>
+  <img src="immagini/img-camper-pensionato.png" alt="Il mio camper">
+  <span class="partenza">Partenza da Rivoli · 7 luglio 2026</span>
+</header>
+
+<nav class="toc">
+  <h2>Tappe del viaggio</h2>
+  <ol>
+    <li><a href="#tappa0">Avvicinamento costa tirrenica</a></li>
+    <li><a href="#tappa1">Lucignano (AR)</a></li>
+    <li><a href="#tappa2">Castiglione del Lago</a></li>
+    <li><a href="#tappa3">Amatrice</a></li>
+    <li><a href="#tappa4">Lago di Campotosto</a></li>
+    <li><a href="#tappa5">Castel del Monte / S. Stefano</a></li>
+    <li><a href="#tappa6">Fossa — S. Maria ad Cryptas</a></li>
+    <li><a href="#tappa7">Bussi sul Tirino</a></li>
+    <li><a href="#tappa8">Lago di Scanno</a></li>
+    <li><a href="#tappa9">Villetta Barrea</a></li>
+    <li><a href="#tappa10">Cascata del Volturno</a></li>
+    <li><a href="#tappa11">Lago di Castel San Vincenzo</a></li>
+    <li><a href="#tappa12">Alba Fucens</a></li>
+    <li><a href="#tappa13">Lago del Salto</a></li>
+    <li><a href="#tappa14">Borghi della Tuscia</a></li>
+    <li><a href="#tappa15">Rientro costa tirrenica</a></li>
+    <li><a href="#mare">Soste mare Molise</a></li>
+  </ol>
+</nav>
+
+<main>
+
+  <article class="tappa opzioni" id="tappa0">
+    <span class="num">Tappa 0 — Prima notte</span>
+    <h3>Avvicinamento alla costa tirrenica</h3>
+    <div class="opzioni-wrap">
+      <div class="opzione">
+        <h4>Opzione A · Castel San Pietro Terme (BO)</h4>
+        <p>Area sosta gratuita, vicino a statale e autostrada, davanti al parco fluviale.</p>
+        <div class="badges"><span class="badge no">No corrente</span></div>
+        <p class="note">370 km da Rivoli</p>
+        <div class="links"><a href="https://maps.app.goo.gl/V2tfSWR92age6HQJA" target="_blank" rel="noopener">Apri mappa</a></div>
+      </div>
+      <div class="opzione">
+        <h4>Opzione B · Cesena</h4>
+        <p>Area sosta gratuita, 7 km dall'autostrada.</p>
+        <div class="badges"><span class="badge no">No corrente</span></div>
+        <p class="note">429 km da Rivoli</p>
+        <div class="links"><a href="https://maps.app.goo.gl/t2ZrdRmu2q7nPHGe6" target="_blank" rel="noopener">Apri mappa</a></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="tappa" id="tappa1">
+    <span class="num">Tappa 1</span>
+    <h3>Lucignano (AR)</h3>
+    <div class="badges"><span class="badge">🔌 Corrente</span><span class="badge">💧 Acqua</span></div>
+    <p>Sosta camper gratuita.</p>
+    <div class="links"><a href="https://maps.app.goo.gl/QaGJ2tjCZAqsqE3i8" target="_blank" rel="noopener">Apri mappa</a></div>
+  </article>
+
+  <article class="tappa" id="tappa2">
+    <span class="num">Tappa 2</span>
+    <h3>Castiglione del Lago — Lago Trasimeno</h3>
+    <div class="badges"><span class="badge">🔌 Corrente</span><span class="badge no">No bagni</span></div>
+    <p>Sosta camper — tel. 320 3514130.</p>
+    <p class="note">~500/600 km da Rivoli</p>
+    <div class="links"><a href="https://maps.app.goo.gl/QYUfEMkCYTYDqNAD8" target="_blank" rel="noopener">Apri mappa</a></div>
+  </article>
+
+  <article class="tappa" id="tappa3">
+    <span class="num">Tappa 3</span>
+    <h3>Amatrice</h3>
+    <div class="badges"><span class="badge">🚿 Bagni</span><span class="badge">🚿 Docce a gettone</span><span class="badge">🔌 Corrente</span></div>
+    <p>Agricamping Amatrice — anche ristorante.</p>
+    <div class="links"><a href="https://maps.app.goo.gl/yrFbLUpCEve17fA88" target="_blank" rel="noopener">Apri mappa</a></div>
+  </article>
+
+  <article class="tappa" id="tappa4">
+    <span class="num">Tappa 4</span>
+    <h3>Lago di Campotosto</h3>
+    <p>27 km da Amatrice — sosta per il pranzo, oppure:</p>
+    <p><strong>Agricampeggio Cardito</strong> — tel. 347 0046838</p>
+    <p class="note">⚠️ da verificare se accetta cani</p>
+    <div class="links"><a href="https://maps.app.goo.gl/zqadkXcd6JKerP1a9" target="_blank" rel="noopener">Apri mappa</a></div>
+  </article>
+
+  <article class="tappa" id="tappa5">
+    <span class="num">Tappa 5</span>
+    <h3>Castel del Monte → Santo Stefano di Sessanio</h3>
+    <p class="note">⚠️ Castel del Monte: nessuna sosta camper — andare a Santo Stefano e poi tornare.</p>
+    <div class="badges"><span class="badge">🔌 Corrente</span><span class="badge no">No bagni</span></div>
+    <p><strong>Agricamper Sessanio</strong> — tel. 366 6816786, oppure parcheggio.</p>
+    <div class="links"><a href="https://maps.app.goo.gl/RZQRHUjrxzAxVhau9" target="_blank" rel="noopener">Apri mappa</a></div>
+  </article>
+
+  <article class="tappa" id="tappa6">
+    <span class="num">Tappa 6</span>
+    <h3>Fossa (AQ) — Chiesa di S. Maria ad Cryptas</h3>
+    <div class="links">
+      <a href="https://maps.app.goo.gl/auq8NpJKvZUrdmFZ7" target="_blank" rel="noopener">Apri mappa</a>
+      <a class="secondary" href="https://comune.fossa.aq.it/luoghi/2413388/santa-maria-ad-cryptas" target="_blank" rel="noopener">Info dal Comune</a>
+    </div>
+  </article>
+
+  <article class="tappa" id="tappa7">
+    <span class="num">Tappa 7</span>
+    <h3>Bussi sul Tirino</h3>
+    <div class="badges"><span class="badge">🔌 Corrente</span><span class="badge no">No bagni</span></div>
+    <p>Area sosta nel paese.</p>
+    <div class="links"><a href="https://maps.app.goo.gl/KnonrjfsUzXfQ3HSA" target="_blank" rel="noopener">Apri mappa</a></div>
+  </article>
+
+  <article class="tappa" id="tappa8">
+    <span class="num">Tappa 8</span>
+    <h3>Lago di Scanno</h3>
+    <p>Il lago a forma di cuore. Paese: parcheggio vicino all'area di Protezione Civile.</p>
+    <div class="badges"><span class="badge">🔌 Corrente</span><span class="badge">🚿 Bagni</span><span class="badge">🚿 Docce</span></div>
+    <p><strong>Scanno Sosta Camper</strong></p>
+    <div class="links"><a href="https://maps.app.goo.gl/1WrbbcUFDR1DZgH98" target="_blank" rel="noopener">Apri mappa</a></div>
+  </article>
+
+  <article class="tappa" id="tappa9">
+    <span class="num">Tappa 9</span>
+    <h3>Villetta Barrea — Parco Nazionale d'Abruzzo</h3>
+    <p><strong>Camping Natura Le Quite</strong> — SP 59, 67030 Villetta Barrea (AQ)</p>
+    <div class="links"><a href="https://maps.app.goo.gl/TXfrisju7wJ5RLZK7" target="_blank" rel="noopener">Apri mappa</a></div>
+  </article>
+
+  <article class="tappa" id="tappa10">
+    <span class="num">Tappa 10</span>
+    <h3>Cascata del Volturno</h3>
+    <div class="links"><a href="https://maps.app.goo.gl/NSJYf1pdkh4xJrPR8" target="_blank" rel="noopener">Apri mappa</a></div>
+  </article>
+
+  <article class="tappa" id="tappa11">
+    <span class="num">Tappa 11</span>
+    <h3>Lago di Castel San Vincenzo</h3>
+    <div class="badges"><span class="badge">🔌 Corrente</span><span class="badge">🚿 Bagni</span></div>
+    <p><strong>Area sosta Parco Turistico Oasi delle Mainarde</strong></p>
+    <div class="links"><a href="https://maps.app.goo.gl/9tWjDNnQC8kTChTw9" target="_blank" rel="noopener">Apri mappa</a></div>
+  </article>
+
+  <article class="tappa" id="tappa12">
+    <span class="num">Tappa 12</span>
+    <h3>Alba Fucens — Area archeologica</h3>
+    <div class="links"><a href="https://maps.app.goo.gl/m49kmk31SomEbC42A" target="_blank" rel="noopener">Apri mappa area archeologica</a></div>
+    <p style="margin-top:0.8rem;"><strong>La Cascina del Velino</strong></p>
+    <div class="badges"><span class="badge">🚿 Bagni</span><span class="badge">🚿 Docce</span><span class="badge">🔌 Corrente</span></div>
+    <div class="links"><a href="https://maps.app.goo.gl/EcaYTBpyVfQpeTKR8" target="_blank" rel="noopener">Apri mappa</a></div>
+    <p class="note" style="margin-top:0.8rem;">Alternativa: Agriturismo Il Timo — ⚠️ pessime recensioni · <a href="https://maps.app.goo.gl/WjphkSbeAaBn8sYc7" target="_blank" rel="noopener">mappa</a></p>
+  </article>
+
+  <article class="tappa" id="tappa13">
+    <span class="num">Tappa 13</span>
+    <h3>Lago del Salto (RI)</h3>
+    <div class="badges"><span class="badge">🔌 Corrente</span><span class="badge">🚿 Bagni</span><span class="badge">🚿 Docce</span></div>
+    <p><strong>Area Sosta Camper "Il Ghiro"</strong></p>
+    <div class="links"><a href="https://maps.app.goo.gl/svZuux7uMNwHTFde8" target="_blank" rel="noopener">Apri mappa</a></div>
+  </article>
+
+  <article class="tappa" id="tappa14">
+    <span class="num">Tappa 14</span>
+    <h3>Tour dei borghi della Tuscia</h3>
+    <p><strong>Celleno</strong> — paese fantasma, ampio parcheggio nel centro del paese nuovo</p>
+    <p><strong>Sant'Angelo di Roccalvecce</strong> — "Il paese delle Fiabe"</p>
+    <p><strong>Montefiascone</strong> — tappa enogastronomica (vino)</p>
+    <p><strong>Bolsena</strong> — Blu International Camping</p>
+    <div class="links"><a href="https://maps.app.goo.gl/zLhD2zpgWeAiXLA97" target="_blank" rel="noopener">Apri mappa camping Bolsena</a></div>
+  </article>
+
+  <article class="tappa" id="tappa15">
+    <span class="num">Tappa 15</span>
+    <h3>Rientro verso la costa tirrenica</h3>
+    <p><strong>Areaparking Canova</strong></p>
+    <div class="links"><a href="https://maps.app.goo.gl/DDuAxB7Tc2dSY8fN6" target="_blank" rel="noopener">Apri mappa</a></div>
+  </article>
+
+  <section class="divider" id="mare">🌊 Alternative — soste camper sul mare in Molise</section>
+
+  <div class="mare-list">
+    <p>Da valutare per un'eventuale tappa mare o al rientro:</p>
+    <ul>
+      <li><a href="https://maps.app.goo.gl/tASJDaKDdu5qcSH16" target="_blank" rel="noopener">Le Marinelle Beach &amp; Parking</a> — area sosta camper e auto</li>
+      <li><a href="https://maps.app.goo.gl/ddJXCeqdkw3kuGXa7" target="_blank" rel="noopener">Da Cesare sosta camper</a></li>
+      <li><a href="https://maps.app.goo.gl/Vnq7WprQoei4iJjq9" target="_blank" rel="noopener">Area Sosta Camper "Saracenia"</a></li>
+      <li><a href="https://maps.app.goo.gl/CJWbPdii6kV7MVuw9" target="_blank" rel="noopener">Area Sosta Camper "Villaggio La Torre"</a></li>
+    </ul>
+  </div>
+
+  <div class="avvisi">
+    <h3>⚠️ Da verificare prima della partenza</h3>
+    <ul>
+      <li>Se l'Agricampeggio Cardito (Campotosto) accetta cani</li>
+      <li>Orari e disponibilità telefonando alle strutture con numero indicato (Castiglione del Lago, Santo Stefano di Sessanio, Campotosto)</li>
+      <li>Alba Fucens: valutare "La Cascina del Velino" al posto de "Il Timo" per via delle recensioni</li>
+    </ul>
+  </div>
+
+</main>
+
+<a href="#top" class="backtotop" title="Torna su">↑</a>
+
+<footer>
+  🚐 Archivio personale itinerari camper · <a href="https://catal-gio.github.io/link-sosta-camper/">Vedi anche Soste Camper Italia</a>
+</footer>
+
+</body>
+</html>
